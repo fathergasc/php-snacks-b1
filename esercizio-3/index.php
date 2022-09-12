@@ -51,7 +51,7 @@
     <ul>
         <?php
         for ($i = 0; $i < count($students); $i++) {
-            $gradeAverage = round(($students[$i]['grades']['math'] + $students[$i]['grades']['history'] + $students[$i]['grades']['latin']) / count($students[$i]['grades']), 2);
+            $gradeAverage = round(array_sum($students[$i]['grades']) / count($students[$i]['grades']), 2);
             echo "<li>" . $students[$i]['name'] . " " . $students[$i]['lastname'] . " - Media voti: " . $gradeAverage . "</li>";
         }
         ?>
